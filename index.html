@@ -3,14 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>profile</title>
+    <meta name="description" content="신입 프론트엔드 개발자 장미진의 포트폴리오 프로필 페이지">
+    <title>Mi-jin Jang | profile</title>
+    <link rel="stylesheet" href="../portfolio/css/reset.css">
+    <link rel="stylesheet" href="../portfolio/css/style.css">
 </head>
 <body>
     <div class="profile-wrap">
         <header class="header-wrap">
             <div class="header-text">
                 <h1 class="header-name">
-                    <img src="../assets/img/close.png" alt="" class="icon-x">
+                    <img 
+                        src="../assets/img/close.png" 
+                        alt="" class="icon-x" 
+                        aria-hidden="true">
                     Mi-jin <br> 
                     <span>Jang</span>
                 </h1>
@@ -24,15 +30,42 @@
         <main class="main-wrap">
             <section class="about">
                 <h2 class="about-title">About Me</h2>
-                <div class="about-text"></div>
-                <p>"기본에 충실하자"를 지향하는 신입 프론트엔드 개발자 입니다.</p>
-                <p>작은 디테일이 사용자의 경험을 바꾼다고 믿기에, 화면의 구조와 흐름을 꼼꼼하게 고민합니다.</p>
-                <p>이런 고민들을 바탕으로, 화면의 구조와 흐름을 이해하며 성장중입니다.</p>
+                <div class="about-text">
+                    <p>"기본에 충실하자"를 지향하는 신입 프론트엔드 개발자 입니다.</p>
+                    <p>작은 디테일이 사용자의 경험을 바꾼다고 믿기에, 화면의 구조와 흐름을 꼼꼼하게 고민합니다.</p>
+                    <p>이런 고민들을 바탕으로, 화면의 구조와 흐름을 이해하며 성장중입니다.</p>
+                </div>
             </section>  <!-- about 끝 -->
 
             <section class="strengths">
                 <h2 class="strengths-title">Strengths & Interests</h2>
-                <p>아래 키워드에 마우스를 올리면, 업무에 임하는 저의 태도를 확인할 수 있습니다.</p>
+                <p class="strengths-text">
+                    <span class="msg msg-def">
+                        아래 키워드에 마우스를 올리면, 업무에 임하는 저의 태도를 확인할 수 있습니다.
+                    </span>
+                    <span class="msg msg-dil">
+                        작은 약속도 가볍게 넘기지 않는 태도로 일합니다.
+                    </span>
+                    <span class="msg msg-per">
+                        어려운 문제도 끝까지 붙잡고 해결합니다.
+                    </span>
+                    <span class="msg msg-res">
+                        맡은 일은 제 일처럼 책임지고 마무리합니다.
+                    </span>
+                    <span class="msg msg-con">
+                        매일의 반복이 실력을 만든다고 믿습니다.
+                    </span>
+                    <span class="msg msg-com">
+                        의견을 나누며 더 나은 결과를 만듭니다.
+                    </span>
+                </p>
+                <ul class="strengths-list">
+                    <li class="strengths-item dil" tabindex="0">성실함</li>
+                    <li class="strengths-item per" tabindex="0">끈기</li>
+                    <li class="strengths-item res" tabindex="0">책임감</li>
+                    <li class="strengths-item con" tabindex="0">꾸준함</li>
+                    <li class="strengths-item com" tabindex="0">커뮤니케이션</li>
+                </ul>
             </section>   <!-- strengths 끝 -->
 
             <section class="profile-info">
@@ -40,38 +73,56 @@
                     <ul class="tech-stack-list">
                         <li class="tech-stack-item">
                             <div>
-                                <img src="../assets/icon/markup.png" alt="markup">
+                                <img 
+                                    src="../assets/icon/markup.png" 
+                                    alt="" 
+                                    aria-hidden="true">
                             </div>
                             <div>
                                 <p>Markup</p>
-                                <p>HTML · CSS</p>
+                                <span class="tool">HTML</span>
+                                <span class="tool tool-dot">CSS</span>
                             </div>
                         </li>
                         <li class="tech-stack-item">
                             <div>
-                                <img src="../assets/icon/interaction.png" alt="interaction">
+                                <img 
+                                    src="../assets/icon/interaction.png" 
+                                    alt=""
+                                    aria-hidden="true">
                             </div>
                             <div>
                                 <p>Interaction</p>
-                                <p>Hover · Transition · JS</p>
+                                <span class="tool">Hover</span>
+                                <span class="tool tool-dot">Transition</span>
+                                <span class="tool tool-dot">JS</span>
                             </div>
                         </li>
                         <li class="tech-stack-item">
                             <div>
-                                <img src="../assets/icon/responsive.png" alt="responsive">
+                                <img 
+                                    src="../assets/icon/responsive.png" 
+                                    alt=""
+                                    aria-hidden="true">
                             </div>
                             <div>
                                 <p>Responsive</p>
-                                <p>Mobile · Tablet · Desktop</p>
+                                <span class="tool">Mobile</span>
+                                <span class="tool tool-dot">Tablet</span>
+                                <span class="tool tool-dot">Desktop</span>
                             </div>
                         </li>
                         <li class="tech-stack-item">
                             <div>
-                                <img src="../assets/icon/collaboration.png" alt="collaboration">
+                                <img 
+                                    src="../assets/icon/collaboration.png" 
+                                    alt=""
+                                    aria-hidden="true">
                             </div>
                             <div>
-                                <p>Collaboration</p>
-                                <p>GitL · GitHub</p>
+                                <p>Collaboration</p> 
+                                <span class="tool">Git</span>
+                                <span class="tool tool-dot">GitHub</span>
                             </div>
                         </li>
                     </ul>
@@ -80,15 +131,40 @@
                 <div class="contact">
                     <ul class="contact-list">
                         <li class="contact-list-item">
+                            <img 
+                                src="../assets/icon/gmail.png" 
+                                alt="" 
+                                class="contact-icon" 
+                                aria-hidden="true">
                             <span class="contact-label">Email</span>
-                            <a href="mailto:rudnfgkdma13@gmail.com" class="contact-value">
+                            <a href="mailto:rudnfgkdma13@gmail.com" 
+                                class="contact-value">
                                 rudnfgkdma13@gmail.com
                             </a>
                         </li>
                         <li class="contact-list-item">
+                            <img 
+                                src="../assets/icon/github.png" 
+                                alt="" 
+                                class="contact-icon"
+                                aria-hidden="true">
                             <span class="contact-label">GitHub</span>
-                            <a href="https://github.com/Winter-Haeum/portfolio" class="contact-value" target="_blank">
-                                github.com/WinterHaeum
+                            <a href="https://github.com/Winter-Haeum/portfolio" 
+                                class="contact-value" 
+                                target="_blank" 
+                                rel="noopener noreferrer">
+                                github.com/Winter-Haeum
+                            </a>
+                        </li>
+                        <li class="contact-list-item">
+                            <img 
+                                src="../assets/icon/phone.png" 
+                                alt="" 
+                                class="contact-icon"
+                                aria-hidden="true">
+                            <span class="contact-label">Mobile</span>
+                            <a href="tel:01033490494" class="contact-value">
+                                010-3349-0494
                             </a>
                         </li>
                     </ul>
@@ -100,8 +176,6 @@
                 <p class="footer-sub-message">작은 디테일부터 함께 이야기해보고 싶습니다.</p>
             </footer>
         </main> <!-- main 끝 -->
-        <img src="../assets/img/star.png" alt="" class="icon-star">
-        <img src="../assets/img/flower.png" alt="" class="icon-flower">
     </div>  <!-- profile-wrap 끝 -->
 </body>
 </html>
