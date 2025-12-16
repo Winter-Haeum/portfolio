@@ -1,51 +1,65 @@
-html, body { height: 100%; margin: 0; }
 
 /* 전체 박스 */
 .profile-wrap {
-    position: relative;
-    display: flex;
-    flex-direction: column ;
-    align-items: center;
-    width: 100%;
-    min-height: 100vh;
     padding: 90px 0;
-    gap: 70px;
-    background-color: #FFF4E7;
     overflow: hidden;
+    width: 100%;
+    min-height: auto;
+    display: flex;
+    justify-content: center;
+    background-color: #FFF4E7; 
 }
 
-/* 격자무늬 박스 */
+/* 격자무늬랑 컨텐츠 감싸는 부모 */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+    position: relative;
+    max-width: 1280px; 
+    width: calc(100% - 40px);
+}
+
+/* 격자무늬 만들기 */
 .bg-pattern {
     position: absolute;
-    top: 30px;
-    right: 30px;
-    width: 300px;
-    height: 300px;
     pointer-events: none;
     z-index: 0;
+    background: url("../assets/img/grid.png") repeat 0 0 / 40px 40px;
 }
 
+/* 격자무늬 배치하기 */
+.pattern1 {
+    top: -70px;
+    right: -40px;
+    width: 315px;
+    height: 315px;
+}
+
+.pattern2 {
+    top: 440px;
+    left: 0px;
+    width: 525px;
+    height: 525px;
+}
+
+.pattern3 {
+    bottom: 650px;
+    right: 0px;
+    width: 315px;
+    height: 315px;
+}
+
+
+
+
 /* 격자 패턴 제외하고 모두 z-index 1주기 */
-.profile-wrap > :not(.bg-pattern) {
+.container > :not(.bg-pattern) {
     position: relative;
     z-index: 1;
 }
-
-/* 가상요소로 격자무늬 만들기 */
-.bg-pattern::before {
-    content: "";
-    position: absolute;
-    left: -2100px;
-    top: 0px;
-    width: 100%;
-    height: 100%;
-    background-image: url(../assets/img/grid.png);
-    background-repeat: repeat;
-    background-size: 40px 40px;
-    opacity: 1;
-     background-color: lime;
-}
-
 
 /* 헤더 전체 박스 */
 .header-wrap {
@@ -239,6 +253,18 @@ html, body { height: 100%; margin: 0; }
     z-index: 0;
 }
 
+/* 키프레임 만들기 */
+@keyframes drawUnderline {
+    from {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+    to {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+}
+
 /* 가상요소로 밑줄 만들기 */
 .main-text-underline::after {
     content: "";
@@ -250,18 +276,15 @@ html, body { height: 100%; margin: 0; }
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='10' viewBox='0 0 120 10'><path d='M0 5 Q10 0 20 5 T40 5 T60 5 T80 5 T100 5 T120 5' fill='none' stroke='%23e53935' stroke-width='5' stroke-linecap='round'/></svg>");
     background-repeat: repeat-x;
     background-size: 60px 14px;
+    filter: blur(0.4px);
     opacity: 0;
     transform: scaleX(0);
     transform-origin: left;
-    transition: opacity 1.2s ease, transform 1.2s ease;
-    filter: blur(0.4px);
+    animation: drawUnderline 1.2s ease forwards;
+    animation-delay: 3s;
 }
 
-/* 호버 시 밑줄 긋기 */
-.main-text-underline:hover::after {
-    opacity: 1;
-    transform: scaleX(1);
-}
+
 
 /* 어바웃미 서브 텍스트 */
 .about-sub-text {
@@ -456,12 +479,23 @@ html, body { height: 100%; margin: 0; }
 .tech-stack-icon {
     width: 100px;
     height: 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 }
 
-/* 스택 스킬 아이콘 */
-.tech-stack-icon img{
-    width: 100px;
-    height: 100px;
+/* 스택 스킬 아이콘 백그라운드 이미지로 넣기 */
+.tech-stack-item .markup {
+    background-image: url("../assets/icon/markup.png");
+}
+.tech-stack-item .interaction {
+    background-image: url("../assets/icon/interaction.png");
+}
+.tech-stack-item .responsive {
+    background-image: url("../assets/icon/responsive.png");
+}
+.tech-stack-item .collaboration {
+    background-image: url("../assets/icon/collaboration.png");
 }
 
 /* 스택스킬 오른쪽 텍스트 */
@@ -541,7 +575,7 @@ html, body { height: 100%; margin: 0; }
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
     padding-left: 20px;
 }
 
@@ -550,14 +584,22 @@ html, body { height: 100%; margin: 0; }
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100px;
+    width: 70px;
     height: 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 }
 
-/* 컨텍트 아이콘 */
-.contact-icon img {
-    width: 70px;
-    height: 70px;
+/* 컨텍트 아이콘 백그라운드 이미지로 넣기 */
+.contact-list-item .gmail {
+    background-image: url(../assets/icon/gmail.png);
+}
+.contact-list-item .github {
+    background-image: url(../assets/icon/github.png);
+}
+.contact-list-item .Mobile {
+    background-image: url(../assets/icon/Mobile.png);
 }
 
 /* 컨텍트 오른쪽 텍스트 */
