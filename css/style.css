@@ -9,8 +9,6 @@ html, body { height: 100%; margin: 0; }
     min-height: 100vh;
     padding: 90px 0;
     gap: 70px;
-    background-color: #FFF4E7;
-    position: relative;
 }
 
 /* 헤더 전체 박스 */
@@ -49,7 +47,7 @@ html, body { height: 100%; margin: 0; }
     position: relative;
 }
 
-.header-name span {
+.header-name .family-name {
     font-family: "Gmarket Sans", sans-serif;
     font-size: 68px;
     font-weight: 700;
@@ -99,7 +97,7 @@ html, body { height: 100%; margin: 0; }
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(1);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition: opacity 2s ease, transform 2s ease;
 }
 
 /* 캐릭터 이미지 기본 상태 */
@@ -114,7 +112,7 @@ html, body { height: 100%; margin: 0; }
 /* 캐릭터 이미지 호버 시 교체하기 */
 .header-img:hover .img-default {
     opacity: 0;
-    transform: translate(-50%, -50%) scale(1.1);
+    transform: translate(-50%, -50%) scale(1);
 }
 .header-img:hover .img-hover {
     opacity: 1;
@@ -149,7 +147,7 @@ html, body { height: 100%; margin: 0; }
 }
 
 /* 별 아이콘 붙이기 */
-.icon-star1 {
+.icon-star {
     position: absolute;
     top: 300px;
     left: 970px;
@@ -219,7 +217,7 @@ html, body { height: 100%; margin: 0; }
     opacity: 0;
     transform: scaleX(0);
     transform-origin: left;
-    transition: opacity 0.2s ease, transform 0.35s ease;
+    transition: opacity 1.2s ease, transform 1.2s ease;
     filter: blur(0.4px);
 }
 
@@ -263,10 +261,11 @@ html, body { height: 100%; margin: 0; }
 
 /* 스트렝스 텍스트 | 호버 시 보이는 부분 */
 .strengths-text {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 50px 154px 50px 154px;
+    padding: 50px 154px;
     width: 910px;
     height: 300px;
     word-break: keep-all;
@@ -275,51 +274,33 @@ html, body { height: 100%; margin: 0; }
     font-size: 30px;
     font-weight: 400;
     text-align: center;
-    word-break: keep-all;
-    line-break: normal;
 }
 
 /* 스트렝스 숨기기 */
 .strengths-text .msg { 
-    display: none;
+    position: absolute;
+    left: 154px;
+    right: 154px;
+    opacity: 0;
+    transition: opacity 1.5s ease;
 }
 
 /* 스트렝스 msg-def만 다시 보여줘 */
 .strengths-text .msg-def { 
-    display: inline; 
+    opacity: 1;
 }
 
-/* 호버일 때 */
-.strengths:has(.dil:hover) .msg {
-    display: none;
-}
-.strengths:has(.dil:hover) .msg-dil {
-    display: inline;
-}
-.strengths:has(.per:hover) .msg {
-    display: none;
-}
-.strengths:has(.per:hover) .msg-per {
-    display: inline;
-}
-.strengths:has(.res:hover) .msg {
-    display: none;
-}
-.strengths:has(.res:hover) .msg-res {
-    display: inline;
-}
-.strengths:has(.con:hover) .msg {
-    display: none;
-}
-.strengths:has(.con:hover) .msg-con {
-    display: inline;
-}
-.strengths:has(.com:hover) .msg {
-    display: none;
-}
-.strengths:has(.com:hover) .msg-com {
-    display: inline;
-}
+.strengths:has(.dil:hover) .strengths-text .msg-def { opacity: 0; }
+.strengths:has(.dil:hover) .strengths-text .msg-dil { opacity: 1; }
+.strengths:has(.per:hover) .strengths-text .msg-def { opacity: 0; }
+.strengths:has(.per:hover) .strengths-text .msg-per { opacity: 1; }
+.strengths:has(.res:hover) .strengths-text .msg-def { opacity: 0; }
+.strengths:has(.res:hover) .strengths-text .msg-res { opacity: 1; }
+.strengths:has(.con:hover) .strengths-text .msg-def { opacity: 0; }
+.strengths:has(.con:hover) .strengths-text .msg-con { opacity: 1; }
+.strengths:has(.com:hover) .strengths-text .msg-def { opacity: 0; }
+.strengths:has(.com:hover) .strengths-text .msg-com { opacity: 1; }
+
 
 /* 스트렝스 리스트 */
 .strengths-list {
@@ -613,7 +594,7 @@ html, body { height: 100%; margin: 0; }
     left: -30px;
     opacity: 0;
     transform: scale(0.8);
-    transition: opacity 0.25s ease, transform 0.25s ease;
+    transition: opacity 2s ease, transform 1.2s ease;
     pointer-events: none;
 }
 
