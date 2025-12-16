@@ -7,6 +7,10 @@
     <title>Mi-jin Jang | Profile</title>
     <link rel="stylesheet" href="../portfolio/css/reset.css">
     <link rel="stylesheet" href="../portfolio/css/style.css">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSans.css">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/pretendard@latest/dist/web/static/pretendard.css">
 </head>
 <body>
     <div class="profile-wrap">
@@ -14,7 +18,7 @@
             <div class="header-text">
                 <h1 class="header-name">
                     <img 
-                        src="../assets/img/close.png" 
+                        src="/portfolio/assets/img/cross.png" 
                         alt="" class="icon-x" 
                         aria-hidden="true">
                     Mi-jin <br> 
@@ -23,7 +27,8 @@
                 <p class="header-role">Front-End Developer</p>
             </div>
             <div class="header-img">
-                <img src="../assets/img/Winter-Haeum.png" alt="기본 캐릭터">
+                <img src="/portfolio/assets/img/Winter-Haeum.png" alt="기본 캐릭터" class="img-default">
+                <img src="/portfolio/assets/img/Winter-Haeum-hello.png" alt="호버 캐릭터" class="img-hover">
             </div>            
         </header>   <!-- header 끝 -->
 
@@ -31,10 +36,13 @@
             <section class="about">
                 <h2 class="about-title">About Me</h2>
                 <div class="about-text">
-                    <p>"기본에 충실하자"를 지향하는 신입 프론트엔드 개발자 입니다.</p>
-                    <p>작은 디테일이 사용자의 경험을 바꾼다고 믿기에, 화면의 구조와 흐름을 꼼꼼하게 고민합니다.</p>
-                    <p>이런 고민들을 바탕으로, 화면의 구조와 흐름을 이해하며 성장중입니다.</p>
-                </div>
+                    <h3 class="about-main-text">
+                        <span class="main-text-underline">"기본에 충실하자"</span>를 지향하는 신입 프론트엔드 개발자 입니다.
+                    </h3>
+                    <p class="about-sub-text">작은 디테일이 사용자의 경험을 바꾼다고 믿기에, 화면의 구조와 흐름을 꼼꼼하게 고민합니다.</p>
+                    <p class="about-sub-text">이런 고민들을 바탕으로, 화면의 구조와 흐름을 이해하며 성장중입니다.</p>
+                </div> 
+                <img src="/portfolio/assets/img/star.png" alt="" class="icon-star1">
             </section>  <!-- about 끝 -->
 
             <section class="strengths">
@@ -56,7 +64,7 @@
                         매일의 반복이 실력을 만든다고 믿습니다.
                     </span>
                     <span class="msg msg-com">
-                        의견을 나누며 더 나은 결과를 만듭니다.
+                       소통을 통해 더 나은 결과를 만들어냅니다.
                     </span>
                 </p>
                 <ul class="strengths-list">
@@ -70,110 +78,138 @@
 
             <section class="profile-info">
                 <div class="tech-stack">
+                    <h3 class="tech-stack-title">Tech-Stack</h3>
                     <ul class="tech-stack-list">
                         <li class="tech-stack-item">
                             <div class="tech-stack-icon">
                                 <img 
-                                    src="../assets/icon/markup.png" 
+                                    src="/portfolio/assets/icon/markup.png" 
                                     alt="" 
                                     aria-hidden="true">
                             </div>
                             <div class="tech-stack-content">
-                                <p class="tech-stack-title">Markup</p>
-                                <span class="tool">HTML</span>
-                                <span class="tool tool-dot">CSS</span>
+                                <p class="tech-stack-subtitle">Markup</p>
+                                <div class="tech-stack-tool">
+                                    <span>HTML</span>
+                                    <span class="tool-dot">CSS</span>
+                                </div>
                             </div>
                         </li>
                         <li class="tech-stack-item">
                             <div class="tech-stack-icon">
                                 <img 
-                                    src="../assets/icon/interaction.png" 
+                                    src="/portfolio/assets/icon/interaction.png" 
                                     alt=""
                                     aria-hidden="true">
                             </div>
                             <div class="tech-stack-content">
-                                <p class="tech-stack-title">Interaction</p>
-                                <span class="tool">Hover</span>
-                                <span class="tool tool-dot">Transition</span>
-                                <span class="tool tool-dot">JS</span>
+                                <p class="tech-stack-subtitle">Interaction</p>
+                                <div class="tech-stack-tool">
+                                    <span>Hover</span>
+                                    <span class="tool-dot">Transition</span>
+                                    <span class="tool-dot">JS</span>
+                                </div>
                             </div>
                         </li>
                         <li class="tech-stack-item">
                             <div class="tech-stack-icon">
                                 <img 
-                                    src="../assets/icon/responsive.png" 
+                                    src="/portfolio/assets/icon/responsive.png" 
                                     alt=""
                                     aria-hidden="true">
                             </div>
                             <div class="tech-stack-content">
-                                <p class="tech-stack-title">Responsive</p>
-                                <span class="tool">Mobile</span>
-                                <span class="tool tool-dot">Tablet</span>
-                                <span class="tool tool-dot">Desktop</span>
+                                <p class="tech-stack-subtitle">Responsive</p>
+                                <div class="tech-stack-tool">
+                                    <span>Mobile</span>
+                                    <span class="tool-dot">Tablet</span>
+                                    <span class="tool-dot">Desktop</span>
+                                </div>
                             </div>
                         </li>
                         <li class="tech-stack-item">
                             <div class="tech-stack-icon">
                                 <img 
-                                    src="../assets/icon/collaboration.png" 
+                                    src="/portfolio/assets/icon/collaboration.png" 
                                     alt=""
                                     aria-hidden="true">
                             </div>
                             <div class="tech-stack-content">
-                                <p class="tech-stack-title">Collaboration</p> 
-                                <span class="tool">Git</span>
-                                <span class="tool tool-dot">GitHub</span>
+                                <p class="tech-stack-subtitle">Collaboration</p> 
+                                <div class="tech-stack-tool">
+                                    <span>Git</span>
+                                    <span class="tool-dot">GitHub</span>
+                                </div>
                             </div>
                         </li>
                     </ul>
                 </div>  <!-- tech-stack 끝 -->
 
                 <div class="contact">
+                    <h3 class="contact-title">contact</h3>
                     <ul class="contact-list">
                         <li class="contact-list-item">
-                            <img 
-                                src="../assets/icon/gmail.png" 
-                                alt="" 
-                                class="contact-icon" 
-                                aria-hidden="true">
-                            <span class="contact-label">Email</span>
-                            <a href="mailto:rudnfgkdma13@gmail.com" 
-                                class="contact-value">
-                                rudnfgkdma13@gmail.com
-                            </a>
+                            <div class="contact-icon">
+                                <img 
+                                    src="/portfolio/assets/icon/gmail.png" 
+                                    alt="" 
+                                    aria-hidden="true">
+                            </div>
+                            <div class="contact-field">
+                                <span class="contact-label">Email</span>
+                                <a href="mailto:rudnfgkdma13@gmail.com" 
+                                    class="contact-value">
+                                    rudnfgkdma13@gmail.com
+                                </a>
+                            </div>
                         </li>
                         <li class="contact-list-item">
-                            <img 
-                                src="../assets/icon/github.png" 
-                                alt="" 
-                                class="contact-icon"
-                                aria-hidden="true">
-                            <span class="contact-label">GitHub</span>
-                            <a href="https://github.com/Winter-Haeum/portfolio" 
-                                class="contact-value" 
-                                target="_blank" 
-                                rel="noopener noreferrer">
-                                github.com/Winter-Haeum
-                            </a>
+                            <div class="contact-icon">
+                                <img 
+                                    src="/portfolio/assets/icon/github.png" 
+                                    alt="" 
+                                    aria-hidden="true">
+                            </div>
+                            <div class="contact-field">
+                                <span class="contact-label">GitHub</span>
+                                <a href="https://github.com/Winter-Haeum/portfolio" 
+                                    class="contact-value" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer">
+                                    github.com/Winter-Haeum
+                                </a>
+                            </div>
                         </li>
                         <li class="contact-list-item">
-                            <img 
-                                src="../assets/icon/phone.png" 
-                                alt="" 
-                                class="contact-icon"
-                                aria-hidden="true">
-                            <span class="contact-label">Mobile</span>
-                            <a href="tel:01033490494" class="contact-value">
-                                010-3349-0494
-                            </a>
+                            <div class="contact-icon">
+                                <img 
+                                    src="/portfolio/assets/icon/Mobile.png" 
+                                    alt="" 
+                                    aria-hidden="true">
+                            </div>
+                            <div class="contact-field">
+                                <span class="contact-label">Mobile</span>
+                                <a href="tel:01033490494" class="contact-value">
+                                    010-3349-0494
+                                </a>
+                            </div>
                         </li>
                     </ul>
                 </div> <!-- contact 끝 -->
             </section>  <!-- profile-info 끝 -->
 
             <footer class="profile-footer">
-                <h3 class="footer-message"><span>끝까지</span>읽어주셔서 감사합니다.</h3>
+                <h3 class="footer-message">
+                    <span class="footer-message-bold">
+                        끝까지
+                        <span class="heart" aria-hidden="true">
+                            <img src="/portfolio/assets/img/heart.png" alt="">
+                        </span>
+                    </span>
+                     읽어 주셔서 감사합니다.
+                </h3>
                 <p class="footer-sub-message">작은 디테일부터 함께 이야기해보고 싶습니다.</p>
+                <img src="/portfolio/assets/img/flower.png" alt="" class="icon-flower">
             </footer>
         </main> <!-- main 끝 -->
     </div>  <!-- profile-wrap 끝 -->

@@ -1,0 +1,638 @@
+html, body { height: 100%; margin: 0; }
+
+/* 전체 박스 */
+.profile-wrap {
+    display: flex;
+    flex-direction: column ;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    padding: 90px 0;
+    gap: 70px;
+    background-color: #FFF4E7;
+    position: relative;
+}
+
+/* 헤더 전체 박스 */
+.header-wrap {
+    display: grid;
+    grid-template-columns: 550px 490px;
+    column-gap: 60px;
+    width: 1100px;
+    height: 440px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 헤더 왼쪽 텍스트 */
+.header-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+}
+
+/* 헤더 왼쪽 이름 */
+.header-name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 550px;
+    height: 284px;
+    font-family: "Gmarket Sans", sans-serif;
+    font-size: 68px;
+    font-weight: 500;
+    background-color: #6ED779;
+    border-radius: 20px;
+    border: 9px solid #000;
+    padding: 55px 150px 55px 150px;
+    position: relative;
+}
+
+.header-name span {
+    font-family: "Gmarket Sans", sans-serif;
+    font-size: 68px;
+    font-weight: 700;
+}
+
+/* 헤더 왼쪽 꾸밈 아이콘 */
+.icon-x {
+    width: 87px;
+    height: 87px;
+    position: absolute;
+    top: -50px;
+    left: -50px;
+}
+
+/* 헤더 왼쪽 직군 */
+.header-role {
+    display: flex;
+    justify-content: center;
+    width: 550px;
+    height: 127px;
+    padding: 30px 50px 30px 50px;
+    font-family: "Gmarket Sans", sans-serif;
+    font-size: 36px;
+    font-weight: 500;
+    background-color: #FF8B43;
+    border-radius: 20px;
+    border: 9px solid #000;
+}
+
+/* 헤더 오른쪽 캐릭터 박스 */
+.header-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 440px;
+    background-color: #DC6FD6;
+    border: 10px solid #000;
+    border-radius: 20px;
+    position: relative;
+}
+
+/* 캐릭터 이미지 설정 */
+.header-img img {
+    width: 373px;
+    height: 373px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* 캐릭터 이미지 기본 상태 */
+.img-default {
+    opacity: 1;
+}
+.img-hover {
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* 캐릭터 이미지 호버 시 교체하기 */
+.header-img:hover .img-default {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.1);
+}
+.header-img:hover .img-hover {
+    opacity: 1;
+    transform: translate(-50%, -45%) scale(1.3);
+
+}
+
+/* ---------- 헤더 끝!!! ---------- */
+
+/* 메인 시작 */
+.main-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1100px;
+    height: 100%;
+    background-color: #fff;
+    border: 10px solid #000;
+    border-radius: 50px;
+    padding: 60px;
+    gap: 100px;
+}
+
+/* 어바웃미 */
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 910px;
+    height: 620px;
+    position: relative;
+}
+
+/* 별 아이콘 붙이기 */
+.icon-star1 {
+    position: absolute;
+    top: 300px;
+    left: 970px;
+    width: 60px;
+    pointer-events: none;
+}
+
+/* 어바웃미 타이틀 */
+.about-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 910px;
+    height: 175px;
+    font-family: "Gmarket Sans", sans-serif;
+    font-size: 45px;
+    font-weight: 700;
+    background-color: #FF8B43;
+    border: 7px solid #000;
+    border-radius: 30px;
+}
+
+/* 어바웃미 텍스트 */
+.about-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 910px;
+    height: 415px;
+    padding: 50px 154px 0 154px;
+    word-break: keep-all;
+    line-break: normal;
+    gap: 30px;
+}
+
+/* 어바웃미 메인 텍스트 */
+.about-main-text {
+    display: inline-block;
+    font-family: "Pretendard", sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* 밑줄 들어갈 곳 */
+.main-text-underline {
+    display: inline-block;
+    position: relative;
+    padding-bottom: 8px;
+    white-space: nowrap;
+    cursor: pointer;
+    z-index: 0;
+}
+
+/* 가상요소로 밑줄 만들기 */
+.main-text-underline::after {
+    content: "";
+    position: absolute;
+    top: 45px;
+    left: 10px;
+    width: 100%;
+    height: 14px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='10' viewBox='0 0 120 10'><path d='M0 5 Q10 0 20 5 T40 5 T60 5 T80 5 T100 5 T120 5' fill='none' stroke='%23e53935' stroke-width='5' stroke-linecap='round'/></svg>");
+    background-repeat: repeat-x;
+    background-size: 60px 14px;
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: opacity 0.2s ease, transform 0.35s ease;
+    filter: blur(0.4px);
+}
+
+/* 호버 시 밑줄 긋기 */
+.main-text-underline:hover::after {
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+/* 어바웃미 서브 텍스트 */
+.about-sub-text {
+    display: flex;
+    font-family: "Pretendard", sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    text-align: center;
+}
+
+/* ---------- 어바웃미 끝!!! ----------- */
+
+/* 스트렝스 전체 박스 */
+.strengths {
+    width: 910px;
+    height: 617px;
+}
+
+/* 스트렝스 타이틀 */
+.strengths-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 910px;
+    height: 175px;
+    font-family: "Gmarket Sans", sans-serif;
+    font-size: 45px;
+    font-weight: 700;
+    background-color: #6ED779;
+    border: 7px solid #000;
+    border-radius: 30px;
+}
+
+/* 스트렝스 텍스트 | 호버 시 보이는 부분 */
+.strengths-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 154px 50px 154px;
+    width: 910px;
+    height: 300px;
+    word-break: keep-all;
+    line-break: normal;
+    font-family: "Pretendard", sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    text-align: center;
+    word-break: keep-all;
+    line-break: normal;
+}
+
+/* 스트렝스 숨기기 */
+.strengths-text .msg { 
+    display: none;
+}
+
+/* 스트렝스 msg-def만 다시 보여줘 */
+.strengths-text .msg-def { 
+    display: inline; 
+}
+
+/* 호버일 때 */
+.strengths:has(.dil:hover) .msg {
+    display: none;
+}
+.strengths:has(.dil:hover) .msg-dil {
+    display: inline;
+}
+.strengths:has(.per:hover) .msg {
+    display: none;
+}
+.strengths:has(.per:hover) .msg-per {
+    display: inline;
+}
+.strengths:has(.res:hover) .msg {
+    display: none;
+}
+.strengths:has(.res:hover) .msg-res {
+    display: inline;
+}
+.strengths:has(.con:hover) .msg {
+    display: none;
+}
+.strengths:has(.con:hover) .msg-con {
+    display: inline;
+}
+.strengths:has(.com:hover) .msg {
+    display: none;
+}
+.strengths:has(.com:hover) .msg-com {
+    display: inline;
+}
+
+/* 스트렝스 리스트 */
+.strengths-list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-content: center;
+    align-items: center;
+    font-family: "Pretendard", sans-serif;
+    font-size: 27px;
+    font-weight: 400;
+    position: relative;
+}
+
+/* 단어 5개 배치 및 효과 적용 */
+.strengths-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    width: 150px;
+    height: 150px;
+    padding-bottom: 20px;
+    font-family: "Pretendard", sans-serif;
+    font-size: 27px;
+    font-weight: 500;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+}
+
+/* 가상요소 선 만들기 */
+.strengths-list::after {
+    content: "";
+    position: absolute;
+    top: 40px;
+    width: 100%;
+    height: 4px;
+    background: black;
+}
+
+/* 가상요소 점 만들기 */
+.strengths-item::before {
+    display: flex;
+    justify-content: space-around;
+    content: "";
+    position: absolute;
+    top: 28px;
+    left: 20%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* 점 색깔 적용 */
+.dil::before {
+    background-color: #ED30A6;
+}
+.per::before {
+    background-color: #076AF7;
+}
+.res::before {
+    background-color: #FCDA52;
+}
+.con::before {
+    background-color: #3CC825;
+}
+.com::before {
+    left: 60px;
+    background-color: #ED30A6;
+}
+
+/* ---------- 스트렝스 끝!!! ----------- */
+
+/* 스택스킬, 컨텍스 그리드 설정 */
+.profile-info {
+    display: grid;
+    grid-template-columns: 460px 420px;
+    justify-content: center;
+    gap: 30px;
+    min-height: 0;
+}
+
+/* 스택스킬 그리드 설정 */
+.tech-stack {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 10px;
+    height: 650px;
+}
+
+/* 스택스킬 타이틀 */
+.tech-stack-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 102px;
+    font-family: "Gmarket Sans", sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    background-color: #B2E0FF;
+    border: 7px solid #000;
+    border-radius: 20px;
+    margin: 60px 0 30px 0;
+}
+
+/* 스택스킬 목록 */
+.tech-stack-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-left: 20px;
+}
+
+/* 스택스킬 아이콘 박스 */
+.tech-stack-icon {
+    width: 100px;
+    height: 100px;
+}
+
+/* 스택 스킬 아이콘 */
+.tech-stack-icon img{
+    width: 100px;
+    height: 100px;
+}
+
+/* 스택스킬 오른쪽 텍스트 */
+.tech-stack-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 6px;
+    font-family: "Pretendard", sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+    text-align: center;
+    position: relative;
+}
+
+/* 스택스킬 서브타이틀 */
+.tech-stack-subtitle {
+    font-weight: 500;
+}
+
+/* 스택스킬 툴 */
+.tech-stack-tool {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 12px;
+}
+
+.tech-stack-tool > span:not(:first-child) {
+    position: relative;
+    padding-left: 12px;
+}
+
+/* 스택스킬 툴 가상요소 점 만들기 */
+.tech-stack-tool > :not(:first-child)::before {
+    content: "";
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #000;
+}
+
+/* ---------- 스택스킬 끝!!! ----------- */
+
+/* 컨텍트 그리드 설정 */
+.contact {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 10px;
+    height: 547px;
+}
+
+/* 컨텍트 타이들 */
+.contact-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 102px;
+    font-family: "Gmarket Sans", sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    background-color: #FFE9AA;
+    border: 7px solid #000;
+    border-radius: 20px;
+    margin: 60px 0 30px 0;
+}
+
+/* 컨텍트 목록 */
+.contact-list-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding-left: 20px;
+}
+
+/* 컨텍트 아이콘 박스 */
+.contact-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+}
+
+/* 컨텍트 아이콘 */
+.contact-icon img {
+    width: 70px;
+    height: 70px;
+}
+
+/* 컨텍트 오른쪽 텍스트 */
+.contact-field {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 6px;
+    font-family: "Pretendard", sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+    text-align: center;
+    position: relative;
+}
+
+/* 컨텍트 라벨 */
+.contact-label {
+    font-weight: 500;
+}
+
+/* ---------- 컨텍트 끝!!! ----------- */
+
+/* 마무리 멘트 */
+.profile-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 910px;
+    height: 175px;
+    gap: 12px;
+    background-color: #FF8B43;
+    border: 7px solid #000;
+    border-radius: 30px;
+    position: relative;
+
+}
+
+/* 꽃 아이콘 붙이기 */
+.icon-flower {
+    position: absolute;
+    top: 130px;
+    left: -130px;
+    width: 150px;
+    pointer-events: none;
+}
+
+/* 감사인사 */
+.footer-message {
+    font-family: "Pretendard", sans-serif;    font-size: 45px;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+/* 끝까지 강조하기 */
+.footer-message-bold {
+    position: relative;
+    display: inline-block;
+    font-family: "Gmarket Sans", sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/* 하트 숨기기 */
+.footer-message-bold .heart {
+    position: absolute;
+    top : -35px;
+    left: -30px;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    pointer-events: none;
+}
+
+/* 하트 이미지 크기 설정 */
+.footer-message-bold .heart img {
+    display: block;
+    width: 40px;
+    height: 40px;
+}
+
+/* 호버 시 하트 보이기 */
+.footer-message:hover .footer-message-bold .heart {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* 최종 마무리 멘트 */
+.footer-sub-message {
+    font-family: "Pretendard", sans-serif;
+    font-weight: 400;
+    font-size: 25px;
+}
