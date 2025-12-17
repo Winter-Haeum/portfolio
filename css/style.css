@@ -628,7 +628,7 @@
 .profile-footer {
     padding: 50px 0;
     width: 100%;
-    max-width: 910%;
+    max-width: 910px;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -696,4 +696,144 @@
     font-family: "Pretendard", sans-serif;
     font-weight: 400;
     font-size: 25px;
+}
+
+/* ----------  푸터 끝!!! ----------- */
+
+/* 태블릿 반응형 시작하기 */
+@media (max-width: 834px) {
+/* 전체 박스 */
+.profile-wrap {
+    padding: 70px 0;
+}
+
+/* 격자무늬랑 컨텐츠 감싸는 부모 */
+.container {
+    gap: 50px;
+}
+
+/* 격자무늬 만들기 */
+.pattern1 {
+    width: 195px;
+    height: 195px;
+    top: -70px;
+    right: -40px;
+}
+
+.pattern2 {
+    width: 525px;
+    height: 525px;
+    top: 440px;
+    left: 0px;
+}
+
+.pattern3 {
+    width: 315px;
+    height: 315px;
+    bottom: 650px;
+    right: 0px;
+}
+
+/* 헤더 전체 박스 */
+.header-wrap {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+/* 헤더 왼쪽 텍스트 */
+.header-text {
+    gap: 30px;
+}
+
+/* 헤더 왼쪽 이름 */
+.header-name {
+    padding: 45px 130px;
+    width: 100%;
+    height: auto;
+    border: 7px solid #000;
+    font-size: 58px;
+}
+
+.header-name .family-name {
+    font-size: 58px;
+}
+
+/* 헤더 왼쪽 꾸밈 아이콘 */
+.icon-x {
+    width: 58px;
+    height: 58px;
+    top: -35px;
+    left: -35px;
+}
+
+/* 헤더 왼쪽 직군 */
+.header-role {
+    padding: 20px 30px;
+    width: auto;
+    height: auto;
+    border: 7px solid #000;
+    font-size: 32px;
+    align-items: center;
+}
+
+/* 헤더 오른쪽 캐릭터 박스 */
+.header-img {
+    width: 100%;
+    height: 357px;
+    border: 9px solid #000;
+}
+
+/* 캐릭터 이미지 설정 */
+.header-img img {
+    width: 254px;
+    height: 254px;
+}
+
+/* ---------- 헤더 끝!!! ---------- */
+
+/* 메인 시작 */
+.main-wrap {
+    padding: 45px;
+    gap: 70px;
+    border: 9px solid #000;
+}
+
+/* 어바웃미 박스*/
+.about {
+    max-width: 680px;
+}
+
+
+
+/* 별 아이콘 붙이기 */
+.icon-star {}
+
+
+
+
+/* 어바웃미 타이틀 */
+.about-title {
+    width: 100%;
+    height: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 모바일 반응형 시작하기 */
+@media (max-width: 393px) {}
+
+
 }
