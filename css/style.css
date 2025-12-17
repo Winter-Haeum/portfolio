@@ -12,48 +12,46 @@
 
 /* 격자무늬랑 컨텐츠 감싸는 부모 */
 .container {
+    gap: 70px;
+    max-width: 1280px; 
+    width: calc(100% - 40px);
     display: flex;
+    position: relative;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 70px;
-    position: relative;
-    max-width: 1280px; 
-    width: calc(100% - 40px);
 }
 
 /* 격자무늬 만들기 */
 .bg-pattern {
     position: absolute;
-    pointer-events: none;
     z-index: 0;
     background: url("../assets/img/grid.png") repeat 0 0 / 40px 40px;
+    pointer-events: none;
+    
 }
 
 /* 격자무늬 배치하기 */
 .pattern1 {
-    top: -70px;
-    right: -40px;
     width: 315px;
     height: 315px;
+    top: -70px;
+    right: -40px;
 }
 
 .pattern2 {
-    top: 440px;
-    left: 0px;
     width: 525px;
     height: 525px;
+    top: 440px;
+    left: 0px;
 }
 
 .pattern3 {
-    bottom: 650px;
-    right: 0px;
     width: 315px;
     height: 315px;
+    bottom: 650px;
+    right: 0px;
 }
-
-
-
 
 /* 격자 패턴 제외하고 모두 z-index 1주기 */
 .container > :not(.bg-pattern) {
@@ -63,11 +61,12 @@
 
 /* 헤더 전체 박스 */
 .header-wrap {
+    width: 100%;
+    max-width: 1100px;
+    height: auto;
     display: grid;
     grid-template-columns: 550px 490px;
     column-gap: 60px;
-    width: 1100px;
-    height: 440px;
     justify-content: center;
     align-items: center;
 }
@@ -76,25 +75,25 @@
 .header-text {
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 35px;
+    align-items: center;
 }
 
 /* 헤더 왼쪽 이름 */
 .header-name {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding: 55px 150px 55px 150px;
     width: 550px;
     height: 284px;
-    font-family: "Gmarket Sans", sans-serif;
-    font-size: 68px;
-    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
     background-color: #6ED779;
     border-radius: 20px;
     border: 9px solid #000;
-    padding: 55px 150px 55px 150px;
-    position: relative;
+    font-family: "Gmarket Sans", sans-serif;
+    font-size: 68px;
+    font-weight: 500;
 }
 
 .header-name .family-name {
@@ -114,29 +113,29 @@
 
 /* 헤더 왼쪽 직군 */
 .header-role {
-    display: flex;
-    justify-content: center;
+    padding: 30px 50px 30px 50px;
     width: 550px;
     height: 127px;
-    padding: 30px 50px 30px 50px;
+    display: flex;
+    justify-content: center;
+    background-color: #FF8B43;
+    border: 9px solid #000;
+    border-radius: 20px;
     font-family: "Gmarket Sans", sans-serif;
     font-size: 36px;
     font-weight: 500;
-    background-color: #FF8B43;
-    border-radius: 20px;
-    border: 9px solid #000;
 }
 
 /* 헤더 오른쪽 캐릭터 박스 */
 .header-img {
+    height: 440px;
     display: flex;
+    position: relative;
     justify-content: center;
     align-items: center;
-    height: 440px;
-    background-color: #DC6FD6;
     border: 10px solid #000;
     border-radius: 20px;
-    position: relative;
+    background-color: #DC6FD6;
 }
 
 /* 캐릭터 이미지 설정 */
@@ -174,64 +173,66 @@
 
 /* 메인 시작 */
 .main-wrap {
+    padding: 60px;
+    width: 100%;
+    max-width: 1100px;
+    height: auto;
     display: flex;
     flex-direction: column;
+    gap: 100px;
     align-items: center;
-    width: 1100px;
-    height: 100%;
-    background-color: #fff;
     border: 10px solid #000;
     border-radius: 50px;
-    padding: 60px;
-    gap: 100px;
+    background-color: #fff;
 }
 
 /* 어바웃미 */
 .about {
+    width: 100%;
+    max-width: 910px;
+    height: auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 910px;
-    height: 620px;
     position: relative;
+    align-items: center;
 }
 
 /* 별 아이콘 붙이기 */
 .icon-star {
+    width: 60px;
     position: absolute;
     top: 300px;
     left: 970px;
-    width: 60px;
     pointer-events: none;
 }
 
 /* 어바웃미 타이틀 */
 .about-title {
+    width: 910px;
+    height: 175px;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 910px;
-    height: 175px;
+    border: 7px solid #000;
+    background-color: #FF8B43;
+    border-radius: 30px;
     font-family: "Gmarket Sans", sans-serif;
     font-size: 45px;
     font-weight: 700;
-    background-color: #FF8B43;
-    border: 7px solid #000;
-    border-radius: 30px;
 }
 
 /* 어바웃미 텍스트 */
 .about-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    padding: 50px 154px 0 154px;
     width: 910px;
     height: 415px;
-    padding: 50px 154px 0 154px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
     word-break: keep-all;
     line-break: normal;
-    gap: 30px;
 }
 
 /* 어바웃미 메인 텍스트 */
@@ -245,12 +246,12 @@
 
 /* 밑줄 들어갈 곳 */
 .main-text-underline {
-    display: inline-block;
-    position: relative;
     padding-bottom: 8px;
     white-space: nowrap;
-    cursor: pointer;
+    display: inline-block;
+    position: relative;
     z-index: 0;
+    cursor: pointer;
 }
 
 /* 키프레임 만들기 */
@@ -268,23 +269,21 @@
 /* 가상요소로 밑줄 만들기 */
 .main-text-underline::after {
     content: "";
+    opacity: 0;
+    width: 100%;
+    height: 14px;
     position: absolute;
     top: 45px;
     left: 10px;
-    width: 100%;
-    height: 14px;
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='10' viewBox='0 0 120 10'><path d='M0 5 Q10 0 20 5 T40 5 T60 5 T80 5 T100 5 T120 5' fill='none' stroke='%23e53935' stroke-width='5' stroke-linecap='round'/></svg>");
-    background-repeat: repeat-x;
     background-size: 60px 14px;
+    background-repeat: repeat-x;
     filter: blur(0.4px);
-    opacity: 0;
     transform: scaleX(0);
     transform-origin: left;
     animation: drawUnderline 1.2s ease forwards;
     animation-delay: 3s;
 }
-
-
 
 /* 어바웃미 서브 텍스트 */
 .about-sub-text {
@@ -299,48 +298,49 @@
 
 /* 스트렝스 전체 박스 */
 .strengths {
-    width: 910px;
-    height: 617px;
+    width: 100%;
+    max-width: 910px;
+    height: auto;
 }
 
 /* 스트렝스 타이틀 */
 .strengths-title {
+    width: 910px;
+    height: 175px;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 910px;
-    height: 175px;
+    border: 7px solid #000;
+    border-radius: 30px;
+    background-color: #6ED779;
     font-family: "Gmarket Sans", sans-serif;
     font-size: 45px;
     font-weight: 700;
-    background-color: #6ED779;
-    border: 7px solid #000;
-    border-radius: 30px;
 }
 
 /* 스트렝스 텍스트 | 호버 시 보이는 부분 */
 .strengths-text {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     padding: 50px 154px;
     width: 910px;
     height: 300px;
-    word-break: keep-all;
-    line-break: normal;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
     font-family: "Pretendard", sans-serif;
     font-size: 30px;
     font-weight: 400;
     text-align: center;
+    word-break: keep-all;
+    line-break: normal;
 }
 
 /* 스트렝스 숨기기 */
 .strengths-text .msg { 
+    opacity: 0;
     position: absolute;
     left: 154px;
     right: 154px;
-    opacity: 0;
     transition: opacity 1.5s ease;
 }
 
@@ -349,6 +349,7 @@
     opacity: 1;
 }
 
+/* 호버시 해당 문구 나오게 설정하기 */
 .strengths:has(.dil:hover) .strengths-text .msg-def { opacity: 0; }
 .strengths:has(.dil:hover) .strengths-text .msg-dil { opacity: 1; }
 .strengths:has(.per:hover) .strengths-text .msg-def { opacity: 0; }
@@ -365,53 +366,53 @@
 .strengths-list {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
+    position: relative;
     justify-content: center;
     align-items: center;
     font-family: "Pretendard", sans-serif;
     font-size: 27px;
     font-weight: 400;
-    position: relative;
 }
 
 /* 단어 5개 배치 및 효과 적용 */
 .strengths-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
+    padding-bottom: 20px;
     width: 150px;
     height: 150px;
-    padding-bottom: 20px;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: end;
     font-family: "Pretendard", sans-serif;
     font-size: 27px;
     font-weight: 500;
     text-align: center;
-    position: relative;
     cursor: pointer;
 }
 
 /* 가상요소 선 만들기 */
 .strengths-list::after {
     content: "";
-    position: absolute;
-    top: 40px;
     width: 100%;
     height: 4px;
+    position: absolute;
+    top: 40px;
     background: black;
 }
 
 /* 가상요소 점 만들기 */
 .strengths-item::before {
-    display: flex;
-    justify-content: space-around;
     content: "";
+    width: 30px;
+    height: 30px;
+    display: flex;
     position: absolute;
     top: 28px;
     left: 20%;
-    transform: translateX(-50%);
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
     z-index: 1;
+    justify-content: space-around;
+    border-radius: 50%;
+    transform: translateX(-50%);
 }
 
 /* 점 색깔 적용 */
@@ -436,52 +437,52 @@
 
 /* 스택스킬, 컨텍스 그리드 설정 */
 .profile-info {
+    min-height: 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    justify-content: center;
     gap: 30px;
-    min-height: 0;
+    justify-content: center;
 }
 
 /* 스택스킬 그리드 설정 */
 .tech-stack {
+    height: 650px;
     display: grid;
     grid-template-rows: repeat(4, 1fr);
     gap: 10px;
-    height: 650px;
 }
 
 /* 스택스킬 타이틀 */
 .tech-stack-title {
+    margin: 60px 0 30px 0;
+    width: 100%;
+    height: 102px;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 102px;
+    border: 7px solid #000;
+    border-radius: 20px;
+    background-color: #B2E0FF;
     font-family: "Gmarket Sans", sans-serif;
     font-size: 28px;
     font-weight: 700;
-    background-color: #B2E0FF;
-    border: 7px solid #000;
-    border-radius: 20px;
-    margin: 60px 0 30px 0;
 }
 
 /* 스택스킬 목록 */
 .tech-stack-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
     padding-left: 20px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
 }
 
 /* 스택스킬 아이콘 박스 */
 .tech-stack-icon {
     width: 100px;
     height: 100px;
-    background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+    background-repeat: no-repeat;
 }
 
 /* 스택 스킬 아이콘 백그라운드 이미지로 넣기 */
@@ -500,16 +501,16 @@
 
 /* 스택스킬 오른쪽 텍스트 */
 .tech-stack-content {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
+    position: relative;
     gap: 6px;
+    align-items: flex-start;
     font-family: "Pretendard", sans-serif;
     font-size: 25px;
     font-weight: 400;
     text-align: center;
-    position: relative;
 }
 
 /* 스택스킬 서브타이틀 */
@@ -525,70 +526,70 @@
 }
 
 .tech-stack-tool > span:not(:first-child) {
-    position: relative;
     padding-left: 12px;
+    position: relative;
 }
 
 /* 스택스킬 툴 가상요소 점 만들기 */
 .tech-stack-tool > :not(:first-child)::before {
     content: "";
-    position: absolute;
-    justify-content: center;
-    align-items: center;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
     width: 4px;
     height: 4px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    justify-content: center;
+    align-items: center;
     border-radius: 50%;
     background-color: #000;
+    transform: translateY(-50%);
 }
 
 /* ---------- 스택스킬 끝!!! ----------- */
 
 /* 컨텍트 그리드 설정 */
 .contact {
+    height: 547px;
     display: grid;
     grid-template-rows: repeat(4, 1fr);
     gap: 10px;
-    height: 547px;
 }
 
 /* 컨텍트 타이들 */
 .contact-title {
+    margin: 60px 0 30px 0;
+    width: 100%;
+    height: 102px;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 102px;
+    border: 7px solid #000;
+    border-radius: 20px;
+    background-color: #FFE9AA;
     font-family: "Gmarket Sans", sans-serif;
     font-size: 28px;
     font-weight: 700;
-    background-color: #FFE9AA;
-    border: 7px solid #000;
-    border-radius: 20px;
-    margin: 60px 0 30px 0;
 }
 
 /* 컨텍트 목록 */
 .contact-list-item {
+    padding-left: 20px;
     display: flex;
+    gap: 20px;
     justify-content: center;
     align-items: center;
-    gap: 20px;
-    padding-left: 20px;
 }
 
 /* 컨텍트 아이콘 박스 */
 .contact-icon {
+    width: 70px;
+    height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 70px;
-    height: 100px;
-    background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+    background-repeat: no-repeat;
 }
 
 /* 컨텍트 아이콘 백그라운드 이미지로 넣기 */
@@ -604,16 +605,16 @@
 
 /* 컨텍트 오른쪽 텍스트 */
 .contact-field {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
+    position: relative;
     gap: 6px;
+    align-items: flex-start;
     font-family: "Pretendard", sans-serif;
     font-size: 25px;
     font-weight: 400;
     text-align: center;
-    position: relative;
 }
 
 /* 컨텍트 라벨 */
@@ -625,26 +626,27 @@
 
 /* 마무리 멘트 */
 .profile-footer {
+    padding: 50px 0;
+    width: 100%;
+    max-width: 910%;
+    height: auto;
     display: flex;
     flex-direction: column;
+    position: relative;
+    gap: 12px;
     justify-content: center;
     align-items: center;
-    width: 910px;
-    height: 175px;
-    gap: 12px;
-    background-color: #FF8B43;
     border: 7px solid #000;
     border-radius: 30px;
-    position: relative;
-
+    background-color: #FF8B43;
 }
 
 /* 꽃 아이콘 붙이기 */
 .icon-flower {
+    width: 150px;
     position: absolute;
     top: 130px;
     left: -130px;
-    width: 150px;
     pointer-events: none;
 }
 
@@ -657,8 +659,8 @@
 
 /* 끝까지 강조하기 */
 .footer-message-bold {
-    position: relative;
     display: inline-block;
+    position: relative;
     font-family: "Gmarket Sans", sans-serif;
     font-size: 30px;
     font-weight: 500;
@@ -667,10 +669,10 @@
 
 /* 하트 숨기기 */
 .footer-message-bold .heart {
+    opacity: 0;
     position: absolute;
     top : -35px;
     left: -30px;
-    opacity: 0;
     transform: scale(0.8);
     transition: opacity 2s ease, transform 1.2s ease;
     pointer-events: none;
