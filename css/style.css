@@ -208,7 +208,8 @@
 
 /* 어바웃미 타이틀 */
 .about-title {
-    width: 910px;
+    width: 100%;
+    max-width: 910px;
     height: 175px;
     display: flex;
     justify-content: center;
@@ -305,7 +306,8 @@
 
 /* 스트렝스 타이틀 */
 .strengths-title {
-    width: 910px;
+    width: 100%;
+    max-width: 910px;
     height: 175px;
     display: flex;
     justify-content: center;
@@ -321,7 +323,8 @@
 /* 스트렝스 텍스트 | 호버 시 보이는 부분 */
 .strengths-text {
     padding: 50px 154px;
-    width: 910px;
+    width: 100%;
+    max-width: 910px;
     height: 300px;
     display: flex;
     position: relative;
@@ -437,18 +440,23 @@
 
 /* 스택스킬, 컨텍스 그리드 설정 */
 .profile-info {
-    min-height: 0;
+    padding-bottom: 40px;
+    width: 100%;
+    max-width: 910px;
+    height: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 30px;
+    gap: 20px;
     justify-content: center;
 }
 
 /* 스택스킬 그리드 설정 */
 .tech-stack {
-    height: 650px;
+    width: 100%;
+    max-width: 417px;
+    height: auto;
     display: grid;
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-rows: auto;
     gap: 10px;
 }
 
@@ -456,6 +464,7 @@
 .tech-stack-title {
     margin: 60px 0 30px 0;
     width: 100%;
+    max-width: 416px;
     height: 102px;
     display: flex;
     justify-content: center;
@@ -549,6 +558,8 @@
 
 /* 컨텍트 그리드 설정 */
 .contact {
+    width: 100%;
+    max-width: 417px;
     height: 547px;
     display: grid;
     grid-template-rows: repeat(4, 1fr);
@@ -559,6 +570,7 @@
 .contact-title {
     margin: 60px 0 30px 0;
     width: 100%;
+    max-width: 416px;
     height: 102px;
     display: flex;
     justify-content: center;
@@ -576,7 +588,7 @@
     padding-left: 20px;
     display: flex;
     gap: 20px;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 
@@ -652,7 +664,7 @@
 
 /* 감사인사 */
 .footer-message {
-    font-family: "Pretendard", sans-serif;    font-size: 45px;
+    font-family: "Pretendard", sans-serif;
     font-size: 25px;
     font-weight: 500;
 }
@@ -700,140 +712,359 @@
 
 /* ----------  푸터 끝!!! ----------- */
 
+
+
+
+
+
 /* 태블릿 반응형 시작하기 */
 @media (max-width: 834px) {
-/* 전체 박스 */
-.profile-wrap {
-    padding: 70px 0;
+    /* 전체 박스 */
+    .profile-wrap {
+        padding: 70px 0;
+    }
+
+    /* 격자무늬랑 컨텐츠 감싸는 부모 */
+    .container {
+        gap: 50px;
+    }
+
+    /* 격자무늬 만들기 */
+    .pattern1 {
+        width: 195px;
+        height: 195px;
+        top: -70px;
+        right: -40px;
+    }
+
+    .pattern2 {
+        width: 405px;
+        height: 405px;
+        top: 440px;
+        left: 0px;
+    }
+
+    .pattern3 {
+        width: 315px;
+        height: 315px;
+        bottom: 650px;
+        right: 0px;
+    }
+
+    /* 헤더 전체 박스 */
+    .header-wrap {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
+    /* 헤더 왼쪽 텍스트 */
+    .header-text {
+        gap: 30px;
+    }
+
+    /* 헤더 왼쪽 이름 */
+    .header-name {
+        padding: 45px 130px;
+        width: 100%;
+        height: auto;
+        border: 7px solid #000;
+        font-size: 58px;
+    }
+
+    .header-name .family-name {
+        font-size: 58px;
+    }
+
+    /* 헤더 왼쪽 꾸밈 아이콘 */
+    .icon-x {
+        width: 58px;
+        height: 58px;
+        top: -35px;
+        left: -35px;
+    }
+
+    /* 헤더 왼쪽 직군 */
+    .header-role {
+        padding: 20px 30px;
+        width: auto;
+        height: auto;
+        border: 7px solid #000;
+        font-size: 32px;
+        align-items: center;
+    }
+
+    /* 헤더 오른쪽 캐릭터 박스 */
+    .header-img {
+        width: 100%;
+        height: 357px;
+        border: 9px solid #000;
+    }
+
+    /* 캐릭터 이미지 설정 */
+    .header-img img {
+        width: 254px;
+        height: 254px;
+    }
+
+    /* ---------- 헤더 끝!!! ---------- */
+
+    /* 메인 시작 */
+    .main-wrap {
+        padding: 45px;
+        gap: 70px;
+        border: 9px solid #000;
+    }
+
+    /* 어바웃미 전체 박스*/
+    .about {
+        max-width: 680px;
+    }
+
+    /* 별 아이콘 붙이기 */
+    .icon-star {
+        width: 40px;
+        top: 210px;
+        left: 710px;
+    }
+
+    /* 어바웃미 타이틀 */
+    .about-title {
+        width: 100%;
+        max-width: 680px;
+        height: 100px;
+        border: 5px solid #000;
+        font-size: 35px;
+    }
+
+    /* 어바웃미 텍스트 */
+    .about-text {
+        padding: 50px 100px 0 100px;
+        width: 100%;
+        height: auto;
+        gap: 25px;
+        font-size: 24px;
+    }
+
+    /* 어바웃미 메인 텍스트 */
+    .about-main-text {
+        font-size: 36px;
+    }
+
+
+    /* 어바웃미 서브 텍스트 */
+    .about-sub-text {
+        font-size: 24px;
+    }
+
+/* ---------- 어바웃미 끝!!! ----------- */
+
+    /* 스트렝스 전체 박스 */
+    .strengths {
+        width: 100%;
+        max-width: 680px;
+    }
+
+    /* 스트렝스 타이틀 */
+    .strengths-title {
+        width: 100%;
+        max-width: 680px;
+        height: 100px;
+        border: 5px solid #000;
+        font-size: 35px;
+    }
+
+    /* 스트렝스 텍스트 | 호버 시 보이는 부분 */
+    .strengths-text {
+        padding: 80px 50px;
+        width: 100%;
+        height: auto;
+        font-size: 24px;
+    }
+
+    /* 스트렝스 숨기기 */
+    .strengths-text .msg {
+        left: 60px;
+        right: 60px;
+    }
+
+    /* 스트렝스 리스트 */
+    .strengths-list {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        font-size: 21px;
+    }
+
+    /* 단어 5개 배치 및 효과 적용 */
+    .strengths-item {
+        padding-bottom: 15px;
+        width: 100%;
+        height: 100px;
+        font-size: 21px;
+    }
+
+    /* 가상요소 선 만들기 */
+    .strengths-list::after {
+        height: 3px;
+        top: 20px;
+    }
+
+    /* 가상요소 점 만들기 */
+    .strengths-item::before {
+        width: 20px;
+        height: 20px;
+        top: 10px;
+        left: 25px;
+        align-items: center;
+    }
+
+/* ---------- 스트렝스 끝!!! ----------- */
+
+    /* 스택스킬, 컨텍스 그리드 설정 */
+    .profile-info {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 680px;
+        height: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    /* 스택스킬 그리드 설정 */
+    .tech-stack {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-rows: auto;
+        place-items: start;
+        gap: 10px;
+    }
+
+    /* 스택스킬 타이틀 */
+    .tech-stack-title {
+        margin: 40px 0 0 0;
+        width: 100%;
+        max-width: 320px;
+        height: 70px;
+        border: 5px solid #000;
+        font-size: 22px;
+    }
+
+    /* 스택스킬 목록 */
+    .tech-stack-item {
+        padding-left: 15px;
+        justify-content: flex-start;
+
+    }
+
+    /* 스택스킬 아이콘 박스 */
+    .tech-stack-icon {
+        width: 80px;
+        height: 80px;
+    }
+
+    /* 스택스킬 오른쪽 텍스트 */
+    .tech-stack-content {
+        font-size: 19px;
+    }
+
+    /* 스택스킬 툴 가상요소 점 만들기 */
+    .tech-stack-tool > :not(:first-child)::before {
+    width: 3px;
+    height: 3px;
+    }
+
+    /* ---------- 스택스킬 끝!!! ----------- */
+
+    /* 컨텍트 그리드 설정 */
+    .contact {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-rows: 110px 1fr;
+        gap: 10px;
+    }
+
+    /* 컨텍트 타이들 */
+    .contact-title {
+        margin: 40px 0 0 0;
+        width: 100%;
+        max-width: 320px;
+        height: 70px;
+        border: 5px solid #000;
+        font-size: 22px;
+    }
+
+    /* 컨텍트 목록 */
+    .contact-list-item {
+        padding-left: 15px;
+        justify-content: flex-start;
+    }
+
+    /* 컨텍트 아이콘 박스 */
+    .contact-icon {
+        width: 60px;
+        height: 80px;
+    }
+
+    /* 컨텍트 오른쪽 텍스트 */
+    .contact-field {
+        font-size: 19px;
+    }
+
+/* ---------- 컨텍트 끝!!! ----------- */
+
+    /* 마무리 멘트 */
+    .profile-footer {
+        padding: 40px 0;
+        width: 100%;
+        max-width: 680px;
+        height: 120px;
+        gap: 10px;
+        border: 5px solid #000;
+    }
+
+    /* 꽃 아이콘 붙이기 */
+    .icon-flower {
+        width: 120px;
+        left: -100px;
+    }
+
+    /* 감사인사 */
+    .footer-message {
+        font-size: 19px;
+    }
+
+    /* 끝까지 강조하기 */
+    .footer-message-bold {
+        font-size: 24px;
+    }
+
+    /* 하트 숨기기 */
+    .footer-message-bold .heart {
+        top: -20px;
+        left: -20px;
+    }
+
+    /* 하트 이미지 크기 설정 */
+    .footer-message-bold .heart img {
+        width: 25px;
+        height: 25px;
+    }
+
+
+
+
+    /* 최종 마무리 멘트 */
+    .footer-sub-message {
+        font-size: 19px;
+    }
+
+/* ----------  푸터 끝!!! ----------- */
 }
-
-/* 격자무늬랑 컨텐츠 감싸는 부모 */
-.container {
-    gap: 50px;
-}
-
-/* 격자무늬 만들기 */
-.pattern1 {
-    width: 195px;
-    height: 195px;
-    top: -70px;
-    right: -40px;
-}
-
-.pattern2 {
-    width: 525px;
-    height: 525px;
-    top: 440px;
-    left: 0px;
-}
-
-.pattern3 {
-    width: 315px;
-    height: 315px;
-    bottom: 650px;
-    right: 0px;
-}
-
-/* 헤더 전체 박스 */
-.header-wrap {
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-}
-
-/* 헤더 왼쪽 텍스트 */
-.header-text {
-    gap: 30px;
-}
-
-/* 헤더 왼쪽 이름 */
-.header-name {
-    padding: 45px 130px;
-    width: 100%;
-    height: auto;
-    border: 7px solid #000;
-    font-size: 58px;
-}
-
-.header-name .family-name {
-    font-size: 58px;
-}
-
-/* 헤더 왼쪽 꾸밈 아이콘 */
-.icon-x {
-    width: 58px;
-    height: 58px;
-    top: -35px;
-    left: -35px;
-}
-
-/* 헤더 왼쪽 직군 */
-.header-role {
-    padding: 20px 30px;
-    width: auto;
-    height: auto;
-    border: 7px solid #000;
-    font-size: 32px;
-    align-items: center;
-}
-
-/* 헤더 오른쪽 캐릭터 박스 */
-.header-img {
-    width: 100%;
-    height: 357px;
-    border: 9px solid #000;
-}
-
-/* 캐릭터 이미지 설정 */
-.header-img img {
-    width: 254px;
-    height: 254px;
-}
-
-/* ---------- 헤더 끝!!! ---------- */
-
-/* 메인 시작 */
-.main-wrap {
-    padding: 45px;
-    gap: 70px;
-    border: 9px solid #000;
-}
-
-/* 어바웃미 박스*/
-.about {
-    max-width: 680px;
-}
-
-
-
-/* 별 아이콘 붙이기 */
-.icon-star {}
-
-
-
-
-/* 어바웃미 타이틀 */
-.about-title {
-    width: 100%;
-    height: auto;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* 모바일 반응형 시작하기 */
 @media (max-width: 393px) {}
 
 
-}
