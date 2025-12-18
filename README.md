@@ -97,10 +97,4 @@ overflow-wrap: anywhere;
 자식 요소가 부모 영역을 넘지 않고
 안정적으로 레이아웃을 유지할 수 있었습니다.
 
-## ✨ Interaction
-
-JavaScript 없이 CSS만으로
-hover / focus 기반 인터랙션을 구현해
-디바이스 환경에 따라 적용 방식을 조정했습니다.
-
 
