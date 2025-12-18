@@ -1,4 +1,18 @@
 
+@font-face {
+  font-family: "Gmarket Sans";
+  src: url("../assets/fonts/GmarketSansTTFMedium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gmarket Sans";
+  src: url("../assets/fonts/GmarketSansTTFBold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
 /* 전체 박스 */
 .profile-wrap {
     padding: 90px 0;
