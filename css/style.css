@@ -102,13 +102,29 @@
     font-weight: 700;
 }
 
-/* 헤더 왼쪽 꾸밈 아이콘 */
+/* 헤더 왼쪽 십자가 아이콘 */
 .icon-x {
     width: 87px;
     height: 87px;
     position: absolute;
     top: -50px;
     left: -50px;
+}
+
+/* 십자가 기본 상태 */
+.icon-x {
+  transform-origin: center;
+}
+
+/* 회전 애니메이션 정의 */
+@keyframes spin-cross {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Mi-jin Jang 박스에 호버하면 십자가 회전 */
+.header-name:hover .icon-x{
+  animation: spin-cross 1s linear infinite;
 }
 
 /* 헤더 왼쪽 직군 */
@@ -126,6 +142,19 @@
     font-family: "Gmarket Sans", sans-serif;
     font-size: 36px;
     font-weight: 500;
+}
+
+/* 직군 호버 시 인터렉션 넣기 */
+.header-role{
+    transition: background-color 0.25s ease,
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.header-role:hover{
+    background-color: #e65f00;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 #333;
 }
 
 /* 헤더 오른쪽 캐릭터 박스 */
@@ -208,6 +237,17 @@
     right: -120px;
     left: auto;
     pointer-events: none;
+    transform-origin: center;
+    animation: spin-pause 6s ease-in-out infinite;
+}
+
+/* 회전 애니메이션 정의 */
+@keyframes spin-pause {
+    0%   { transform: rotate(0); }
+    20%  { transform: rotate(360deg); }
+    50%  { transform: rotate(360deg); }
+    70%  { transform: rotate(720deg); }
+    100% { transform: rotate(720deg); }
 }
 
 /* 어바웃미 타이틀 */
@@ -224,6 +264,13 @@
     font-family: "Gmarket Sans", sans-serif;
     font-size: 45px;
     font-weight: 700;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+}
+
+.about-title:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 #000;
+    filter: brightness(1.03);
 }
 
 /* 어바웃미 텍스트 */
@@ -322,7 +369,15 @@
     font-family: "Gmarket Sans", sans-serif;
     font-size: 45px;
     font-weight: 700;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
 }
+
+.strengths-title:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 #000;
+    filter: brightness(1.03);
+}
+
 
 /* 스트렝스 텍스트 | 호버 시 보이는 부분 */
 .strengths-text {
@@ -395,6 +450,22 @@
     font-weight: 500;
     text-align: center;
     cursor: pointer;
+    transition: transform .18s ease, font-weight .18s ease, filter .18s ease;
+    transform-origin: center;
+}
+
+/* 키워드에 호버하면: 두근두근(짧게 반복) + 살짝 커짐 + 진해짐 */
+.strengths-item:hover{
+    font-weight: 700;
+    filter: brightness(.9);
+    animation: keyword-bounce .55s ease-in-out infinite;
+}
+
+/* 두근두근 바운스 */
+@keyframes keyword-bounce{
+    0%, 100% { transform: translateY(0) scale(1); }
+    40%      { transform: translateY(-4px) scale(1.08); }
+    70%      { transform: translateY(0) scale(1.03); }
 }
 
 /* 가상요소 선 만들기 */
@@ -416,7 +487,7 @@
     position: absolute;
     top: 28px;
     left: 50%;
-    z-index: 1;
+    z-index: 2;
     justify-content: space-around;
     border-radius: 50%;
     transform: translateX(-50%);
@@ -486,20 +557,27 @@
     font-weight: 700;
     box-sizing: border-box;
     justify-self: stretch;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+}
+
+.tech-stack-title:hover {
+transform: translateY(-2px);
+box-shadow: 0 4px 0 #000;
+filter: brightness(1);
 }
 
 /* 스택스킬 목록 */
 .tech-stack-item {
     padding-left: 20px;
     display: flex;
-    gap: 10px;
+    gap: 20px;
     align-items: center;
 }
 
 /* 스택스킬 아이콘 박스 */
 .tech-stack-icon {
     width: 80px;
-    height: 80px;
+    height: 110px;
     flex-shrink: 0;
     background-position: center;
     background-size: contain;
@@ -548,6 +626,28 @@
     gap: 12px;
 }
 
+/* 스택 스킬 호버 시 효과주기 */
+.tech-stack-item {
+  transition: transform 0.18s ease;
+}
+
+.tech-stack-item:hover {
+  transform: translateY(-3px);
+}
+
+.tech-stack-icon {
+  transition: transform 0.2s ease;
+}
+
+.tech-stack-item:hover .tech-stack-icon {
+  transform: scale(1.1);
+}
+
+.tech-stack-item:hover .tech-stack-content {
+  font-weight: 600;
+}
+
+/* 첫번째 자식 빼고 여백주기(가상요소 점 넣을 곳 마련)*/
 .tech-stack-tool > span:not(:first-child) {
     padding-left: 12px;
     position: relative;
@@ -598,13 +698,20 @@
     font-weight: 700;
     box-sizing: border-box;
     justify-self: stretch;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+}
+
+.contact-title:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 0 #000;
+    filter: brightness(1);
 }
 
 /* 컨텍트 목록 */
 .contact-list-item {
     padding-left: 20px;
     display: flex;
-    gap: 14px;
+    gap: 20px;
     justify-content: flex-start;
     align-items: center;
 }
@@ -612,7 +719,7 @@
 /* 컨텍트 아이콘 박스 */
 .contact-icon {
     width: 60px;
-    height: 80px;
+    height: 110px;
     flex-shrink: 0;
     display: flex;
     justify-content: center;
@@ -653,6 +760,27 @@
     font-weight: 500;
 }
 
+/* 컨텍트 호버 시 효과주기 */
+.contact-list-item {
+  transition: transform 0.18s ease;
+}
+
+.contact-list-item:hover {
+  transform: translateY(-2px);
+}
+
+.contact-icon {
+  transition: transform 0.18s ease;
+}
+
+.contact-list-item:hover .contact-icon {
+  transform: scale(1.06);
+}
+
+.contact-list-item:hover .contact-field {
+  font-weight: 600;
+}
+
 /* ---------- 컨텍트 끝!!! ----------- */
 
 /* 마무리 멘트 */
@@ -679,6 +807,17 @@
     top: 130px;
     left: -130px;
     pointer-events: none;
+    transform-origin: center;
+    animation: spin-pause 6s ease-in-out infinite;
+}
+
+/* 회전 애니메이션 정의 */
+@keyframes spin-pause {
+    0%   { transform: rotate(0); }
+    20%  { transform: rotate(360deg); }
+    50%  { transform: rotate(360deg); }
+    70%  { transform: rotate(720deg); }
+    100% { transform: rotate(720deg); }
 }
 
 /* 감사인사 */
@@ -696,6 +835,28 @@
     font-size: 30px;
     font-weight: 500;
     cursor: pointer;
+}
+
+/* 바운스 설정 */
+@keyframes gentle-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+}
+
+/* 기본 바운스 실행 */
+.footer-message-bold {
+    display: inline-block;
+    position: relative;
+    font-family: "Gmarket Sans", sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+    cursor: pointer;    
+    animation: gentle-bounce 1s ease-in-out infinite;
+}
+
+/* 호버 시 바운스 멈춤 */
+.footer-message-bold:hover {
+    animation: none;
 }
 
 /* 하트 숨기기 */
@@ -1384,120 +1545,89 @@
         align-items: center;
         text-align: center;
         border: 4px solid #000;
-        font-size: 24px;
         border-radius: 20px;
+        font-size: 24px;
         letter-spacing: -0.03em;
     }
 
-    /* 호버/라인/점/키워드 라인 영역 제거 */
-    .strengths-list{ display: none !important; }
+    /* 기존 hover/라인 구조 제거 */
+      .strengths-list,
+      .strengths-text .msg-def{
+        display: none !important;
+      }
 
-    /* 안내문 제거 */
-    .strengths-text .msg-def{ display: none !important; }
-
-    /* 텍스트 나열 컨테이너 */
-    .strengths-text{
-        position: static !important;
-        height: auto !important;
+      /* 텍스트 컨테이너 */
+      .strengths-text{
         padding: 0 !important;
-        border: 0 !important;
-        background: transparent !important;
         display: flex !important;
         flex-direction: column !important;
+        position: static !important;
         gap: 16px !important;
+        align-items: flex-start !important;
+        border: 0 !important;
+        background: transparent !important;
         text-align: left !important;
-    }
+      }
 
-    /* 각 문장 블록(내용) */
-    .strengths-text .msg{
-        position: relative !important;   
+      /* 각 문단 */
+      .strengths-text .msg{
+        padding-left: 14px !important;
         opacity: 1 !important;
-        left: auto !important;
-        right: auto !important;
-        display: block !important;
-        margin: 0 !important;
-        padding: 0 0 0 14px !important;   
+        position: static !important;
         font-size: 14px;
         line-height: 1.6;
         word-break: keep-all;
-        overflow-wrap: break-word;
         text-align: left !important;
-        transition: none !important;
-    }
+      }
 
-    /* 키워드 줄(점 + 키워드) ::before가 "내용 앞"에 붙는다 */
-    .strengths-text .msg::before{
-        display: block;
-        margin: 0 0 6px -14px;             
+      /* 키워드 + 점 */
+      .strengths-text .msg::before{
+        margin: 0 0 6px -14px;
         padding-left: 14px;
-        font-size: 16px;
-        font-weight: 800;
-        line-height: 1.2;
-        text-align: left !important;
+        display: block;
         background-repeat: no-repeat;
         background-position: 4px 50%;
         background-size: 6px 6px;
-    }
+        font-size: 16px;
+        font-weight: 800;
+      }
 
-    /* ---- 키워드 + 점색(기존 컬러 그대로) ---- */
-    .strengths-text .msg-dil::before{
+      /* 키워드별 색 */
+      .msg-dil::before{
         content: "성실함";
         background-image: radial-gradient(circle, #ED30A6 0 3px, transparent 3.5px);
-    }
-    .strengths-text .msg-per::before{
+      }
+      .msg-per::before{
         content: "끈기";
         background-image: radial-gradient(circle, #076AF7 0 3px, transparent 3.5px);
-    }
-    .strengths-text .msg-res::before{
+      }
+      .msg-res::before{
         content: "책임감";
         background-image: radial-gradient(circle, #FCDA52 0 3px, transparent 3.5px);
-    }
-    .strengths-text .msg-con::before{
+      }
+      .msg-con::before{
         content: "꾸준함";
         background-image: radial-gradient(circle, #3CC825 0 3px, transparent 3.5px);
-    }
-    .strengths-text .msg-com::before{
+      }
+      .msg-com::before{
         content: "커뮤니케이션";
         background-image: radial-gradient(circle, #ED30A6 0 3px, transparent 3.5px);
-    }
-
-    /* 안내 문구(아래 키워드에 마우스를~) 완전 제거 */
-    .strengths-text .msg-def{
-        display: none !important;
-    }
-
-    /* Strengths 전체를 왼쪽 정렬로 고정 */
-    .strengths-text{
-        text-align: left !important;
-        align-items: flex-start !important;
-    }
-
-    /* 키워드 + 문장 모두 왼쪽 정렬 */
-    .strengths-text .msg{
-        text-align: left !important;
-        align-items: flex-start !important;
-    }
-
-    /* 키워드 줄(::before)도 왼쪽 정렬 */
-    .strengths-text .msg::before{
-        text-align: left !important;
-        margin-left: 0 !important;
-    }
+      }
 
 /* ---------- 스트렝스 끝!!! ----------- */
 
     /* 스택스킬, 컨텍스 그리드 해제 */
     .profile-info {
         padding-bottom: 0;
+        width: 311px; 
         display: flex;           
         flex-direction: column;  
-        width: 311px; 
         gap: 0;           
     }
 
     /* 스택스킬 그리드 해제 */
     .tech-stack {
-        height: 440px;
+        height: 470px;
         display: flex;
         flex-direction: column;
         gap: 0px;
@@ -1515,9 +1645,12 @@
 
     /* 스택스킬 목록 */
     .tech-stack-item {
-        padding: 30px 0 0 5px;
+        padding-left: 5px;
         height: 75px;
         gap: 20;
+    }
+    .tech-stack-list > :first-child {
+        margin-top: 30px;
     }
 
     /* 스택스킬 아이콘 박스 */
