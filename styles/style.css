@@ -495,6 +495,7 @@
     position: absolute;
     top: 40px;
     background: black;
+    z-index: -1;
 }
 
 /* 가상요소 점 만들기 */
